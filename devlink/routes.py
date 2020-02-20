@@ -75,15 +75,15 @@ def logout():
 @login_required
 def account():
     form = UpdateAccountForm()
-    # if form.validate_on_submit:
-    #     current_user.username = form.username.data
-    #     current_user.email = form.email.data
-    #     db.session.commit()
-    #     flash('Information successfully updated.', 'success')
-    #     return redirect(url_for('account'))
-    # elif request.method == 'GET':
-    #     form.username.data = current_user.username
-    #     form.email.data = current_user.email
+    if request.method == 'GET':
+        form.username.data = current_user.username
+        form.email.data = current_user.email
+    elif form.validate_on_submit:
+        current_user.username = form.username.data
+        current_user.email = form.email.data
+        db.session.commit()
+        flash('Information successfully updated.', 'success')
+        return redirect(url_for('account'))
     image_file = url_for('static', filename='profpics/' +
                          current_user.image_file)
     return render_template('account.html', title='Account', image_file=image_file, form=form)
