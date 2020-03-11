@@ -1,15 +1,15 @@
 {% extends "layout.html" %}
 {% block content %}
+<h1>Project Details</h1>
         <article class="media content-section">
           <div class="media-body">
-            <div class="article-metadata">
+            <h2 class="article-title">{{ post.title }}</h2>
+            <h5 class="article-content">Technologies: {{ post.technologies }}</h5>
+            <p class="article-content">{{ post.content }}</p>
+            </div>
+             <div class="article-metadata">
               <a class="mr-2" href="#">{{ post.author.username }}</a>
               <small class="text-muted">{{ post.date_posted.strftime('%m-%d-%Y') }}</small>
-             
-            </div>
-            <h2 class="article-title">{{ post.title }}</h2>
-            <h5 class="article-content">{{ post.content }}</h5>
-            <p class="article-content">Technologies: {{ post.technologies }}</p>
           </div>
           
         </article>
