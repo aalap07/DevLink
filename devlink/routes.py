@@ -6,6 +6,7 @@ from devlink.models import User, Post
 from devlink.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm, RequestResetForm, ResetPasswordForm
 from flask_login import login_user, current_user, logout_user, login_required
 
+
 @app.route("/")
 @app.route("/home")
 def home():
@@ -140,8 +141,10 @@ def user_posts(username):
         .paginate(page=page, per_page=5)
     return render_template('user_posts.html', posts=posts, user=user)
 
+
 def send_reset_email(user):
     pass
+
 
 @app.route("/reset_password", methods=['GET', 'POST'])
 def reset_request():
@@ -166,4 +169,3 @@ def reset_token(token):
         return redirect(url_for('reset_request'))
     form = ResetPasswordForm()
     return render_template('reset_token.html', title='Reset Password', form=form)
-
