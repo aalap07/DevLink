@@ -3,15 +3,18 @@
     {% for post in posts.items %}
         <article class="media content-section">
           <div class="media-body">
-            <div class="article-metadata">
-              <a class="mr-2" href="{{ url_for('user_posts', username=post.author.username, page=page_num) }}"">{{ post.author.username }}</a>
-              <small class="text-muted">{{ post.date_posted.strftime('%d-%m-%Y') }}</small>
-            </div>
+           
             <h2><a class="article-title" href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h2>
-            <p class="article-content">{{ post.content }}</p>
-             <p class="article-content">{{ post.technologies }}</p>
+            <h5 class="article-content">{{ post.content }}</h5>
+             <p class="article-content">Technologies: {{ post.technologies }}</p>
           </div>
+           <div class="article-metadata">
+              <a class="mr-2" href="{{ url_for('user_posts', username=post.author.username, page=page_num) }}"">{{ post.author.username }}</a>
+              <small class="text-muted">{{ post.date_posted.strftime('%m-%d-%Y') }}</small>
+            
+            </div>
         </article>
+        
     {% endfor %}
    {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
       {% if page_num %}
