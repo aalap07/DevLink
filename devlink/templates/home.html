@@ -7,7 +7,9 @@
             <h2><a class="article-title" href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h2>
             <h5 class="article-content">Technologies: {{ post.technologies }}</h5>
             <p class="article-content">{{ post.content }}</p>
-          </div>
+            <a class="btn btn-primary" href="mailto:{{post.author.email}}?Subject=[DevLink]%20Request%20to%20join%20{{post.title}}" target="_top">Request to join</a>          
+            </div>
+          
            <div class="article-metadata">
               <a class="mr-2" href="{{ url_for('user_posts', username=post.author.username, page=page_num) }}"">{{ post.author.username }}</a>
               <small class="text-muted">{{ post.date_posted.strftime('%m-%d-%Y') }}</small>
