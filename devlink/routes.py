@@ -85,7 +85,7 @@ def new_post():
     form = PostForm()
     if form.validate_on_submit():
         post = Post(title=form.title.data,
-                    content=form.content.data, technologies=form.technologies.data, author=current_user)
+                    content=form.content.data, technologies=form.technologies.data, collaborators=form.collaborators.data, author=current_user)
         db.session.add(post)
         db.session.commit()
         flash("Post created.", 'success')
@@ -110,6 +110,7 @@ def update_post(post_id):
         post.title = form.title.data
         post.content = form.content.data
         post.technologies = form.technologies.data
+        post.collaborators = form.collaborators.data
         db.session.commit()
         flash('Post updated.', 'success')
         return redirect(url_for('post', post_id=post.id))
@@ -117,6 +118,7 @@ def update_post(post_id):
         form.title.data = post.title
         form.content.data = post.content
         form.technologies.data = post.technologies
+        form.collaborators.data = post.collaborators
     return render_template('create_post.html', title='Update Post', form=form, legend='Update Post')
 
 

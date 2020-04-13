@@ -5,30 +5,13 @@
           <div class="media-body">
            
             <h2><a class="article-title" href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h2>
-            <h5 class="article-content">Technologies: {{ post.technologies }}</h5>
-            <p class="article-content">{{ post.content }}</p>
+            <h4 class="article-content">Technologies: {{ post.technologies }}</h4>
+            <h5 class="article-content">Description: {{ post.content }}</h5>
+            <br>
+            <a class="btn btn-outline-primary" href="{{ url_for('post', post_id=post.id) }}" role="button">Learn more</a>
 
-<div align="center" id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-<!--add for loop for all images in post.images-->
-  <div align="center" class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(45).jpg"
-        alt="Img1">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+            <br> 
 
-<br> 
-
-            <a class="btn btn-primary" href="mailto:{{post.author.email}}?Subject=[DevLink]%20Request%20to%20join%20{{post.title}}" target="_top">Request to join</a>          
             </div>
           
            <div class="article-metadata">
