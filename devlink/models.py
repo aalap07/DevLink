@@ -43,7 +43,6 @@ class Post(db.Model):
     content = db.Column(db.Text, nullable=False)
     technologies = db.Column(db.Text, nullable=False)
     collaborators = db.Column(db.Text, nullable=False)
-    # picture = db.Column(db.String(20), nullable=False, default='')
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
     def __repr__(self):

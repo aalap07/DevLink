@@ -66,7 +66,6 @@ class PostForm(FlaskForm):
     content = TextAreaField('Description', validators=[DataRequired()])
     technologies = TextAreaField('Technologies', validators=[DataRequired()])
     collaborators = TextAreaField('Collaborators', validators=[DataRequired()])
-    picture = FileField('Image', validators=[FileAllowed(['jpg', 'png'])])
     submit = SubmitField('Post')
 
 
