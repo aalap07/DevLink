@@ -1,10 +1,8 @@
 # DevLink
-Python and Flask web app to 'link developers together'. Allows users to create listings for freelance projects for which they are seeking help and freelancers can request to join projects.
+Python, Flask, and SQLAlchemy social web app to 'link developers together'. Users can post their side projects and request to join those of others. Deployed to AWS on a Ubuntu EC2 instance.
+I always found it difficult to find short term side projects whenever I wasn't attending a hackathon, so I sought
+to create something simple and effective while learning new technologies.
 
-# How to run
-1. Clone repo
-2. Navigate to root directory (/DevLink)
-3. python3 run.py
+# Try it out
+http://ec2-54-159-148-224.compute-1.amazonaws.com
 
-# Compliance
-[![BCH compliance](https://bettercodehub.com/edge/badge/aalap07/DevLink?branch=master)](https://bettercodehub.com/)
