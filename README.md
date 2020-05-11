@@ -4,5 +4,5 @@ I always found it difficult to find short term side projects whenever I wasn't a
 to create something simple and effective while learning new technologies.
 
 # Try it out
-http://ec2-54-159-148-224.compute-1.amazonaws.com:8080/
+http://ec2-54-159-148-224.compute-1.amazonaws.com
 
